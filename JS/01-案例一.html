@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+            height: 80px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        th{
+            padding: 5px 30px;
+        }
+        table,th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>订单</h2>
+    <script>
+        //用户输入
+        //隐式转换字符类型
+        let  name = prompt("请输入商品名称");
+        let price = +prompt("请输入价格");
+        let number = +prompt("请输入数量");
+        let address = prompt("请输入地址");
+        //计算
+        let total = price * number;
+        //输出
+        //模版字符串
+        document.write(
+            `
+            <table>
+                <tr>
+                    <th>名称</th>
+                    <th>价格</th>
+                    <th>数量</th>
+                    <th>总价</th>
+                    <th>地址</th>
+                </tr>
+                <tr>
+                    <td>${name}</td>
+                    <td>${price}</td>
+                    <td>${number}</td>
+                    <td>${total}</td>
+                    <td>${address}</td>
+                </tr>
+            `
+        )
+    </script>
+</body>
+</html>

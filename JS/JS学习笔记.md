@@ -12,3 +12,19 @@ document。querySelectorAll('CSS选择器')
 
 对象.innerHTML属性：
 将文本内容添加/更新到任意标签位置；会解析标签，多标签建议使用模版字符
+
+操作元素样式属性：
+1.通过style属性操作CSS
+对象.style。样式属性 = 值
+2.操作类名（className）操作CSS
+元素。className = 'active'
+好处：修改多个样式
+tips：直接使用会覆盖以前的类名
+3.通过classList操作类控制CSS
+元素.classList.add('类名')
+元素.classList.remove('类名')
+元素.classList。toggle('类名')
+className和classList的区别：
+修改大量样式的更方便
+修改多样式的时候方便
+classList是追加和删除不影响以前类名

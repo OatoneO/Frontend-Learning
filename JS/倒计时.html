@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn" disabled>倒计时(60)</button>
+    <script>
+        const btn = document.querySelector('.btn')
+        console.log(btn.innerHTML);
+        let i = 60
+        const timer = setInterval(() => {
+            i--
+            btn.innerHTML = `倒计时(${i})`
+            if(i === 0) {
+                clearInterval(timer)
+                btn.innerHTML = '点击'
+                btn.disabled = false
+            }
+        }, 1000)
+    </script>
+    
+</body>
+</html>

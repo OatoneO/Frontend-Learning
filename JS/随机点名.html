@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h2{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .box{
+            width: 600px;
+            height: 200px;
+            background-color: #f0f0f0;
+            margin: 50px  auto;
+            line-height: 40px;
+            font-size: 25px;
+            display: flex;
+        }
+        .qs{
+            width: 450px;
+            height: 40px;
+            color: red;
+        }
+        .btns{
+            text-align: center;
+        }
+        .btns button{
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示名字</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">停止</button>
+    </div>
+    <script>
+        const arr = ['张三','李四','王五','赵六','田七','刘八','杨九','周十']
+        let timerID = 0
+        let index = 0
+        const start = document.querySelector('.start')
+        start.addEventListener('click',function(){
+            timerID = setInterval(function(){
+                index = Math.floor(Math.random()*arr.length)
+                const qs = document.querySelector('.qs')
+                qs.innerHTML = arr[index]
+            },100)
+
+            if(arr.length === 0){
+                clearInterval(timerID)
+                alert('名单已经抽完')
+                start.disabled = true
+                end.disabled = true
+            }
+        })
+        const end = document.querySelector('.end')
+        end.addEventListener('click',function(){
+            clearInterval(timerID)
+            arr.splice(index,1)
+            console.log(arr);
+        })
+
+    </script>
+</body>
+</html>

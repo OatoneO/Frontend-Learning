@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例(runoob.com)</title>
+<script src="https://cdn.staticfile.net/vue/3.2.36/vue.global.min.js"></script>
+</head>
+<body>
+<div id="hello-vue" class="demo">
+  {{ message }}
+</div>
+<div id="app" class="demo"></div>
+
+<script>
+const HelloVueApp = {
+  data() {
+    return {
+      message: 'Hello Vue!!'
+    }
+  }
+}
+Vue.createApp(HelloVueApp).mount('#hello-vue')
+
+const app = Vue.createApp({
+  data() {
+    return {
+      count: 4
+    }
+  }
+})
+const vm = app.mount('#app')
+document.write(vm.$data.count)
+vm.count = 5
+document.write('<br>')
+document.write(vm.count)
+</script>
+</body>
+</html>
